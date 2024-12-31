@@ -33,8 +33,13 @@ export default function Home() {
         <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center space-y-4 text-center">
-              <div className="space-y-2">
-                <h1 className="text-4xl font-bold tracking-tighter">Welcome Here in Ayanokoji Anime</h1>
+              <div   className="space-y-2">
+                <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl">Welcome Here in Ayanokoji Anime
+                 <span className="bg-gradient-to-r from-purple-400 to-pink-600 text-transparent bg-clip-text">
+                     Superpowers
+                 </span>
+                </h1>
+                <p className="mx-auto max-w[]:"></p>
               </div>
             </div>
           </div>
