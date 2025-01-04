@@ -35,6 +35,8 @@ export function PomodoroTimer() {
                     prev.breakDuration * 60
 
                     //dito me nagtapos | di ko pa siya tapos
+
+                    toast
                 }
             })
         }
