@@ -41,11 +41,11 @@ const testimonials: Testimonial[] = [
     },
     {
         id: '3',
-        quote: "",
+        quote: "There is a",
         videoUrl: "#",
         thumbnail: "",
         author: {
-          name: "",
+          name: "Black",
           role: "",
         }
     },

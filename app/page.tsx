@@ -1,15 +1,18 @@
-import { Button } from "@/components/ui/button";
+  import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import Image from "next/image";
 import { redirect } from "next/navigation";
 import Testimonials from "./components/Testimonials";
+import { auth } from "@/auth"
 
-export default function Home() {
-  //   const session = await auth()
+import { useState } from "react";
 
-  //  if(session) {
-  //   redirect('/dashboard')
-  //  }
+export default async function Home() {
+    const session = await auth()
+
+    if(session) {
+        redirect('/dashboard')
+    }
 
   return (
 <div className="flex min-h-screen flex-col">

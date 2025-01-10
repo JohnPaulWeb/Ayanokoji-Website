@@ -1,7 +1,8 @@
 import { Button } from "@/components/ui/button"
-import { DropdownMenu, DropdownMenuContent, DropdownMenuLabel, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 import Image from "next/image"
 
+import { User } from "next-auth"
 
 interface UserNavProps {
     user: User
@@ -18,10 +19,22 @@ export default function UserNav() {
             <DropdownMenuContent className="w-56" align="end" forceMount>
                 <DropdownMenuLabel className="font-normal">
                     <div className="flex flex-col space-y-1">
-                        <p className="text-sm font-medium">Welcome to the World</p>
+                        <p className="text-sm font-medium leading-none">{user.name}</p>
+
+                        <p className="text-xs leading-none text-muted-foreground">
+                            {user.email}
+                        </p>
+
                     </div>
                 </DropdownMenuLabel>
+
+                <DropdownMenuSeparator />
+                <DropdownMenuItem className="cursor-pointer" onSelect={() => signOut()}>
+                    Log out
+                </DropdownMenuItem>
+
             </DropdownMenuContent>
+
         </DropdownMenu>
     )
 }
