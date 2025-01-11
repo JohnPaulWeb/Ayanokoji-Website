@@ -21,7 +21,7 @@ export default function CreateTask() {
                     await createTask(formData);
                     setTitle("");
                 }}
-                className="flex gap-2">
+                    className="flex gap-2">
                     <Input name="title" placeholder="Enter task..." value={title} onChange={(e) => setTitle(e.target.value)} />
                     <Button type="submit">Add</Button>
                 </form>

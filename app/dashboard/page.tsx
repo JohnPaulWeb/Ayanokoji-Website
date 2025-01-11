@@ -1,13 +1,15 @@
 import { redirect } from "next/navigation"
-import ListSideBar from "../components/ListSideBar"
+import { ListSideBar } from "../components/ListSideBar"
 import { MainNav } from "../components/MainNav"
 import UserNav from "../components/UserNav"
-import PomodoroTimer from "../components/PomodoroTimer"
+import { PomodoroTimer } from "../components/PomodoroTimer"
 import CreateTask from "../components/CreateTask"
 import { TaskList } from "../components/Tasklist"
+import { auth } from "@/auth"
 
 
 export default async function DashboardPage() {
+    
     const session = await auth()
 
     if (!session) {

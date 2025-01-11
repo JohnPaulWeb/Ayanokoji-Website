@@ -41,7 +41,7 @@ const testimonials: Testimonial[] = [
     },
     {
         id: '3',
-        quote: "There is a",
+        quote: "Mikey",
         videoUrl: "#",
         thumbnail: "",
         author: {
