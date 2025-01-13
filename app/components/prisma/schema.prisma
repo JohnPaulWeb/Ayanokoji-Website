@@ -8,11 +8,12 @@ generator client {
 }
 
 model User {
-    id             String @id @default(cuid())
-    email          String @unique
-    name           String?
-    lists          List[]
-    tasks          Tasks[]
+    id              String @id @default(cuid())
+    email           String @unique
+    name            String?
+    lists           List[]
+    tasks           Tasks[]
    settings        Settings?
-   createdAt      DateTime
+   createdAt       DateTime
+   updatedAt       DateTime @update
 }

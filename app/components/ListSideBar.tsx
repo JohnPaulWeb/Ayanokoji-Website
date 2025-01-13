@@ -12,7 +12,7 @@ type List = {
 
 export  function ListSideBar() {
     const [lists, setLists] = React.useState<List[]>([
-        { id: "inbox," name: "Inbox", icon: "Inbox"},
+        { id: "inbox,", name: "Inbox", icon: "Inbox"},
         { id: "today", name: "Today", icon: "Star"}
     ])
     

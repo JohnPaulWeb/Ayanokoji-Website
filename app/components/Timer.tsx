@@ -40,7 +40,7 @@ export default function Timer() {
                         {isRunning ? <Pause className="h-4 w-4" /> : <Play className="h-4 w-4" />}
                     </Button>
                     <Button variant="outline" size="icon" onClick={() => setTime(0)}>
-                        <RefreshCcw className="h-4 w-4" />
+                        <RefreshCcw className="h-4 w-4" />  
                     </Button>
                 </div>
             </CardContent>

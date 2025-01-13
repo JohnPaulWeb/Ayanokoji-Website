@@ -1,3 +1,5 @@
+
+
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import Image from "next/image";
@@ -5,17 +7,20 @@ import { redirect } from "next/navigation";
 import Testimonials from "./components/Testimonials";
 import { auth } from "@/auth"
 
-import { useState } from "react";
+import DashboardPage from "./dashboard/page";
 
-export default function Home() {
-  // const session = await auth()
 
-  //  if(session) {
-  //   redirect('/dashboard')
-  //  }
+
+export default async function Home() {
+  const session = await auth()
+
+   if(session) {
+    redirect('/dashboard')
+   }
 
   return (
     <div className="flex min-h-screen flex-col">
+      <DashboardPage />
       <header className="px-4 lg:px-6 h-16 flex items-center">
         <div className="flex items-center space-x-2">
           <svg

@@ -7,7 +7,6 @@ import { Pause, Play, RefreshCcw } from "lucide-react"
 import React from "react"
 
 
-
 interface TimerState {
     mode: 'work' | 'break'
     timeLeft: number
