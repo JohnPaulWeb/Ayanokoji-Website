@@ -1,5 +1,3 @@
-"use client"
-
 
 
 import { User } from "next-auth"
@@ -15,14 +13,14 @@ import { auth } from "@/auth"
 
 export default async function DashboardPage() {
     
-     const session = await auth()
+    //  const session = await auth()
 
-    if (!session) {
-        redirect('/api/auth/signin')
-    }
+    // if (!session) {
+    //     redirect('/api/auth/signin')
+    // }
          
     
-     const user = session.user as User
+    //  const user = session.user as User
 
     
     return (
@@ -35,7 +33,7 @@ export default async function DashboardPage() {
                     <MainNav />
                     
                     <div className="ml-auto flex items-center space-x-4">
-                        <UserNav user={session.user} /> 
+                        {/* <UserNav user={session.user} />  */}
                     </div>
                 </div>
             </header>

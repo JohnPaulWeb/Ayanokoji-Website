@@ -12,11 +12,11 @@ import DashboardPage from "./dashboard/page";
 
 
 export default async function Home() {
-  const session = await auth()
+  // const session = await auth()
 
-   if(session) {
-    redirect('/dashboard')
-   }
+  //  if(session) {
+  //   redirect('/dashboard')
+  //  }
 
   return (
     <div className="flex min-h-screen flex-col">

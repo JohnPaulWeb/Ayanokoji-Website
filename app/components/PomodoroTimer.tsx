@@ -1,9 +1,13 @@
+"use client"
+
+
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Slider } from "@/components/ui/slider"
 import { Switch } from "@/components/ui/switch"
+import { useToast } from "@/components/ui/use-toast"
 import { toast } from "@/hooks/use-toast"
-import { Pause, Play, RefreshCcw } from "lucide-react"
+import { Coffee, Pause, Play, RefreshCcw } from "lucide-react"
 import React from "react"
 
 
@@ -25,8 +29,7 @@ export function PomodoroTimer() {
         breakDuration: 5
     })
 
-
-
+    const { toast } = useToast()
 
     React.useEffect(() => {
         let interval: NodeJS.Timeout
@@ -77,6 +80,14 @@ export function PomodoroTimer() {
         }))
     }
 
+    const toggleMode = () => {
+        setState(prev => ({
+            ...prev,
+            mode: prev.mode === 'work' ? 'break' : 'work',
+            timeLeft: prev.mode === 'work' ? prev.breakDuration * 60 : prev.workDuration * 60
+        }))
+    }
+
     return(
        <Card>
         <CardHeader>
@@ -85,7 +96,7 @@ export function PomodoroTimer() {
                 <div className="flex items-center space-x-2">
                     <Switch checked={state.mode === 'break'}
                     onCheckedChange={toggleMode} />
-                    <Coffe className="h-4 w-4" />
+                    <Coffee className="h-4 w-4" />
                 </div>
             </CardTitle>
         </CardHeader>
@@ -105,7 +116,7 @@ export function PomodoroTimer() {
                 <div className="space-7-4">
                     <div className="space-7-2">
                         <label className="text-sm font-medium">
-                            Work Duration: {stae.workDuration}min
+                            Work Duration: {state.workDuration}min
                         </label>
                         <Slider value={[state.workDuration]} min={1} max={60} step={1} onValueChange={([value]) => {
                             setState(prev => ({

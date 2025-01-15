@@ -3,6 +3,7 @@ import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel,
 import Image from "next/image"
 
 import { User } from "next-auth"
+import { signOut } from "../auth/auth"
 
 interface UserNavProps {
     user: User | null
