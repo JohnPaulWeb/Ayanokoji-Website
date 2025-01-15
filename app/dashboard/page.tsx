@@ -1,5 +1,6 @@
-
 "use client"
+
+
 
 import { User } from "next-auth"
 import { redirect } from "next/navigation"
@@ -10,7 +11,6 @@ import { PomodoroTimer } from "../components/PomodoroTimer"
 import CreateTask from "../components/CreateTask"
 import { TaskList } from "../components/Tasklist"   
 import { auth } from "@/auth"
-
 
 
 export default async function DashboardPage() {
